@@ -112,10 +112,10 @@ class Loader
     static function add_post_type_fields(\WP_Post_Type $post_type_object)
     {
         $type = ucfirst($post_type_object->graphql_single_name);
-        register_graphql_fields("RootQueryTo${type}ConnectionWhereArgs", [
+        register_graphql_fields("RootQueryTo{$type}ConnectionWhereArgs", [
             'offsetPagination' => [
                 'type' => 'OffsetPagination',
-                'description' => "Paginate ${type}s with offsets",
+                'description' => "Paginate {$type}s with offsets",
             ],
         ]);
     }
