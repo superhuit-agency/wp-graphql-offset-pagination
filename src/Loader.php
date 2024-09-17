@@ -90,7 +90,7 @@ class Loader
         $query_args,
         AbstractConnectionResolver $resolver
     ) {
-        $info = $resolver->getInfo();
+        $info = $resolver->get_info();
         $selection_set = $info->getFieldSelection(2);
 
         if (!isset($selection_set['pageInfo']['offsetPagination']['total'])) {
